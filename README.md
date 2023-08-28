@@ -26,15 +26,6 @@ pytorch 1.12.1
 cuda 12.0
 ```
 
-### Results and Pre-trained Models
-
-| Dataset|PSNR|SSIM| pretrained models |
-|:----|:----|:----|:----|
-|GoPro|32.8705|0.9606|[Google Drive]()  \|  [百度网盘](https://pan.baidu.com/s/1bCl7W0ccpjvYSqd54Pv4Uw?pwd=ebqj)|
-|HIDE|33.7103|0.9668|[Google Drive]()  \|  [百度网盘](https://pan.baidu.com/s/1Y7uQQoJ2BJaZywkrXwjP3Q?pwd=v5qy)|
-|RealBlur-J|33.7103|0.9668|[Google Drive]()  \|  [百度网盘](https://pan.baidu.com/s/1vXgqFCdmIWNcI73aEeFL1Q?pwd=psf9 )|
-|RealBlur-R|33.7103|0.9668|[Google Drive]()  \|  [百度网盘](https://pan.baidu.com/s/1BLy2PBb_4jFFmcA7YAW_2A?pwd=jtpm )|
-
 
 
 ### Citations
