@@ -26,39 +26,6 @@ pytorch 1.12.1
 cuda 12.0
 ```
 
-
-<!--### Quick Start -->
-<!--* Image Denoise Colab Demo: [<a href="https://colab.research.google.com/drive/1dkO5AyktmBoWwxBwoKFUurIDn0m4qDXT?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="google colab logo"></a>](https://colab.research.google.com/drive/1dkO5AyktmBoWwxBwoKFUurIDn0m4qDXT?usp=sharing)-->
-<!--* Image Deblur Colab Demo: [<a href="https://colab.research.google.com/drive/1yR2ClVuMefisH12d_srXMhHnHwwA1YmU?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="google colab logo"></a>](https://colab.research.google.com/drive/1yR2ClVuMefisH12d_srXMhHnHwwA1YmU?usp=sharing)-->
-<!--* Stereo Image Super-Resolution Colab Demo: [<a href="https://colab.research.google.com/drive/1PkLog2imf7jCOPKq1G32SOISz0eLLJaO?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="google colab logo"></a>](https://colab.research.google.com/drive/1PkLog2imf7jCOPKq1G32SOISz0eLLJaO?usp=sharing)-->
-<!--* Single Image Inference Demo:-->
-<!--    * Image Denoise:-->
-<!--    ```-->
-<!--    python basicsr/demo.py -opt options/test/SIDD/NAFNet-width64.yml --input_path ./demo/noisy.png --output_path ./demo/denoise_img.png-->
-<!--  ```-->
-<!--    * Image Deblur:-->
-<!--    ```-->
-<!--    python basicsr/demo.py -opt options/test/REDS/NAFNet-width64.yml --input_path ./demo/blurry.jpg --output_path ./demo/deblur_img.png-->
-<!--    ```-->
-<!--    * ```--input_path```: the path of the degraded image-->
-<!--    * ```--output_path```: the path to save the predicted image-->
-<!--    * [pretrained models](https://github.com/megvii-research/NAFNet/#results-and-pre-trained-models) should be downloaded. -->
-<!--    * Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces) using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo for single image restoration[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/chuxiaojie/NAFNet)-->
-<!--* Stereo Image Inference Demo:-->
-<!--    * Stereo Image Super-resolution:-->
-<!--    ```-->
-<!--    python basicsr/demo_ssr.py -opt options/test/NAFSSR/NAFSSR-L_4x.yml \-->
-<!--    --input_l_path ./demo/lr_img_l.png --input_r_path ./demo/lr_img_r.png \-->
-<!--    --output_l_path ./demo/sr_img_l.png --output_r_path ./demo/sr_img_r.png-->
-<!--    ```-->
-<!--    * ```--input_l_path```: the path of the degraded left image-->
-<!--    * ```--input_r_path```: the path of the degraded right image-->
-<!--    * ```--output_l_path```: the path to save the predicted left image-->
-<!--    * ```--output_r_path```: the path to save the predicted right image-->
-<!--    * [pretrained models](https://github.com/megvii-research/NAFNet/#results-and-pre-trained-models) should be downloaded. -->
-<!--    * Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces) using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo for stereo image super-resolution[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/chuxiaojie/NAFSSR)-->
-<!--* Try the web demo with all three tasks here: [![Replicate](https://replicate.com/megvii-research/nafnet/badge)](https://replicate.com/megvii-research/nafnet)-->
-
 ### Results and Pre-trained Models
 
 | Dataset|PSNR|SSIM| pretrained models |
