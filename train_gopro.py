@@ -12,7 +12,7 @@ import yaml
 from joblib import cpu_count
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from torch.utils.data import DataLoader
-
+from copy import deepcopy
 from dataset import PairedDataset
 from metric_counter import MetricCounter
 from models.losses import get_loss
@@ -21,6 +21,8 @@ from models.networks import get_nets
 
 cv2.setNumThreads(0)
 
+os.environ['CUDA_VISIBLE_DEVICES'] = '3,5,6,7'
+
 
 class Trainer:
     def __init__(self, config, train: DataLoader, val: DataLoader):
@@ -28,6 +30,31 @@ class Trainer:
         self.train_dataset = train
         self.val_dataset = val
         self.metric_counter = MetricCounter(config["experiment_desc"])
+
+    def load_network(self, net, load_path, strict=True, param_key='params'):
+        """Load network.
+
+        Args:
+            load_path (str): The path of networks to be loaded.
+            net (nn.Module): Network.
+            strict (bool): Whether strictly loaded.
+            param_key (str): The parameter key of loaded network. If set to
+                None, use the root 'path'.
+                Default: 'params'.
+        """
+        # net = self.get_bare_model(net)
+
+        load_net = torch.load(
+            load_path, map_location=lambda storage, loc: storage)
+        if param_key is not None:
+            load_net = load_net[param_key]
+        print(' load net keys', load_net.keys)
+        # remove unnecessary 'module.'
+        for k, v in deepcopy(load_net).items():
+            load_net['module.' + k] = v
+            load_net.pop(k)
+        print(load_net.keys())
+        net.load_state_dict(load_net, strict=False)
 
     def train(self):
         self._init_params()
@@ -45,6 +72,8 @@ class Trainer:
             new_scheduler = self.scheduler_G.state_dict()
             new_scheduler.update(training_state["scheduler_state"])
             self.scheduler_G.load_state_dict(new_scheduler)
+        else:
+            self.load_network(self.netG, './pretrained.pth')
 
         for epoch in range(start_epoch, config["num_epochs"]):
             self._run_epoch(epoch)
@@ -184,7 +213,7 @@ if __name__ == "__main__":
     torch.backends.cudnn.benchmark = True
 
     # set random seed
-    seed = 666
+    seed = 123
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
     random.seed(seed)
