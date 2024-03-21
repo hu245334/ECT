@@ -1,10 +1,10 @@
-# ECT : Query Your Input for Fast Image deblurring
+# ECT: Efficient Cross Transformer for Image Deblurring
 
 #### Congratulations on the release of our first deblur code!
 
     Congratulations! Our paper has been accepted for presentation at the IEEE World Congress on Computational Intelligence (IEEE WCCI 2024) to be held at  Pacifico Yokohama, Yokohama, Japan, 30 June - 5 July 2024.
 
-The official pytorch implementation of the paper *[ECT: Efficient Cross Transformer for Image Deblurrin](https://edas.info/showPaper.php?m=1570991621 "Show paper")*
+The official pytorch implementation of the paper *[ECT: Efficient Cross Transformer for Image Deblurring](https://edas.info/showPaper.php?m=1570991621 "Show paper")*
 
 ***
 
